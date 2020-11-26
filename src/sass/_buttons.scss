@@ -1,0 +1,73 @@
+/* =============================================================================
+   BUTTONS
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+
+.button {
+	td {
+		text-align: center;
+		line-height: 100%;
+		background-color: $button-default-background-color;
+		padding-top: 15px;
+		padding-right: 35px;
+		padding-bottom: 15px;
+		padding-left: 35px;
+	}
+
+	a {
+		color: $button-default-text-color;
+		text-decoration: none;
+	}
+}
+
+
+
+/* Variations
+   ========================================================================== */
+
+/**
+ * Button that populates full width of its parent.
+ */
+
+.button--full-width {
+	width: 100%;
+
+	td {
+		text-align: center;
+	}
+}
+
+/**
+ * Button with rounded edges.
+ */
+
+.button--rounded {
+	td {
+		border-radius: 50px;
+	}
+}
+
+.button-cm {
+	background-color: $button-default-background-color;
+	color: $button-default-text-color;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	width: auto;
+	-webkit-text-size-adjust: none;
+	padding: 5px 10px;
+	font-size: $font-size-base !important; // Enforce all the below for MSO
+	line-height: $line-height-base !important;
+	font-family: $font-family-base !important;
+	font-weight: bold !important;
+
+	@media (max-width: $breakpoint-mobile) {
+		box-sizing: border-box !important;
+		display: block !important;
+		width: 100% !important;
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+	}
+}

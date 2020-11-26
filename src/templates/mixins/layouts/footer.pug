@@ -1,0 +1,30 @@
+mixin footer
+  table.bg-dark-gray.text-white(width="100%", align="center", border="0", cellpadding="0", cellspacing="0")
+    tbody
+      tr
+        td
+          <!--[if mso]><![endif]-->        
+        td.py-2
+          table.container(width="660", align="center", border="0", cellpadding="0", cellspacing="0")
+            tbody
+              tr
+                td.column-12.is-first.is-last.small-text.pt-2
+                  a(href="{contact:ConsumerPrivacyLink}" target="_blank" rel="noopener") Privacy Statement
+                  | &nbsp;|&nbsp;
+                  a(href="#" target="_blank" rel="noopener") Terms of Use
+                  | &nbsp;|&nbsp;
+                  a(href="#" target="_blank" rel="noopener") Company Info
+                  | &nbsp;|&nbsp;
+                  a(href="{linkunsubscribe}" target="_blank" rel="noopener") Unsubscribe
+
+          table.container(width="660", align="center", border="0", cellpadding="0", cellspacing="0")
+            tbody
+              tr
+                td.column-2.column-sm-4.is-first.image-reset.py-2
+                  img(src="https://via.placeholder.com/160x72" width="80" height="36")
+                td.column-2
+                td.column-8.column-sm-12.is-last.small-text
+                  p Company, Inc. &copy; 2000 - 2020
+                  p Product, among others, are trademarks and/or service marks of Company, Inc. or one of its subsidiaries or affiliated companies and may be registered in the U.S. and/or other countries.
+        td
+          <!--[if mso]><![endif]-->

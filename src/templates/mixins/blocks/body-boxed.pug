@@ -1,0 +1,9 @@
+mixin body-boxed(classes)
+  - var classes = classes || '';
+  - var attributes = { class: classes };
+  table.container(width="660", align="center", border="0", cellpadding="0", cellspacing="0")&attributes(attributes)
+    tbody
+      tr
+        td.column-12.is-first.is-last.pt-2
+          if block
+            block

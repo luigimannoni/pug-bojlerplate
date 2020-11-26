@@ -1,0 +1,5 @@
+mixin column(size, classes)
+  - var attributes = {class: `column-${size} ${classes}`}
+  td&attributes(attributes)
+    if block
+      block

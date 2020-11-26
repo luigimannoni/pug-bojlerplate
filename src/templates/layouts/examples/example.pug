@@ -1,0 +1,23 @@
+extend ../../partials/html
+
+include ../../mixins/all
+
+block body
+  +header
+  +title('This is a title, before an image')
+  +full-image('https://via.placeholder.com/660x250')
+  +body
+    p This is a simple body block
+  +body-boxed('')
+    p This is a boxed body block
+  +container
+    +column(12, 'is-first is-last image-reset')
+      img(src='https://via.placeholder.com/660x250' alt='Alternate text')
+  +container
+    +column(4, 'is-first')
+      p This is a 3-column block
+    +column(4)
+      p in 12-grid system
+    +column(4, 'is-last')
+      p Pug works!
+  +footer

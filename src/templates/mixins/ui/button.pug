@@ -1,0 +1,69 @@
+mixin button(text, url, style)
+  -
+    function name2hex(color) {
+      if (color[0] === '#') {
+        return color;
+      }
+
+      let textClass = color.match(/(bg-|text-)|(.)\w+/g);
+      textClass.splice(0, 1);
+      textClass = textClass.join('');
+
+      switch(textClass) {
+        case 'white':
+        return '#ffffff';
+        case 'black':
+        return '#000000';
+        case 'light-gray':
+        return '#f0f0f0';
+        case 'gray':
+        return '#555555';
+        case 'dark-gray':
+        return '#3d3935';
+        case 'blue':
+        return '#2b7fff';
+        case 'merlin':
+        return 'rgb(61, 57, 53)';
+        case 'green':
+        return '#c2d216';
+        case 'muddy-waters':
+        return '#f6a117';
+        case 'pink':
+        return '#d0016f';
+        case 'red':
+        return '#e94a60';
+        case 'light-blue':
+        return '#009ace';
+        case 'tangerine':
+        return '#ffa300';
+        case 'jacksons-purple':
+        return 'rgb(23, 28, 143)';
+        case 'blue-smoke':
+        return 'rgb(112, 115, 114)';
+        case 'stack':
+        return '#b3b4b2';
+        default: 
+        return color;
+      }
+    }
+
+    const bgHexColor = typeof style.bgColor === 'undefined' ? '#000000' : name2hex(style.bgColor);
+    const textHexColor = typeof style.color === 'undefined' ? '#ffffff' : name2hex(style.color);
+
+    const bgColor = typeof style.bgColor === 'undefined' ? '' : style.bgColor;
+    const textColor = typeof style.color === 'undefined' ? '' : style.color;
+
+    const width = typeof style.width === 'undefined' ? 300 : style.width;
+    const height = typeof style.height === 'undefined' ? 54 : style.height;
+
+  div.my-2(data-type="slot", data-key="cta-button", data-label="Change the HTML of the CTA button here.")
+    <!--[if mso]>
+    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{url}" style="height:#{height}px;v-text-anchor:middle;width:#{width}px;" stroke="f" fillcolor="#{bgHexColor}">
+    <w:anchorlock/>
+    <center>
+    <![endif]-->
+    a.button-cm(href=url)&attributes({class: `${bgColor} ${textColor}`})= text
+    <!--[if mso]>
+    </center>
+    </v:rect>
+    <![endif]-->
